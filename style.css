@@ -125,6 +125,45 @@ th {
     color: white;
 }
 
+/* Container for the scrolling effect */
+.marquee-container {
+    width: 100%;
+    overflow: hidden; /* Hides the images when they are outside the container */
+    background: #fff;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* The element that actually moves */
+.marquee-content {
+    display: flex;
+    /* We duplicate the content to ensure a seamless loop */
+    width: fit-content; 
+    /* The animation duration determines the speed */
+    animation: scrolling 60s linear infinite; 
+}
+
+/* Styling for individual images */
+.marquee-content img {
+    height: 150px; /* Uniform height for all images */
+    width: auto;
+    margin: 0 10px;
+    border-radius: 5px;
+    /* Optional: Prevents images from stretching during animation */
+    flex-shrink: 0; 
+}
+
+/* Keyframes define the animation: move from right (0%) to left (-100%) */
+@keyframes scrolling {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Optional: Pause animation when user hovers over the images */
+.marquee-container:hover .marquee-content {
+    animation-play-state: paused;
+}
+
 @media (max-width: 600px) {
     body {
         padding: 10px;
