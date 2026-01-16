@@ -137,10 +137,10 @@ th {
 /* The element that actually moves */
 .marquee-content {
     display: flex;
-    /* We duplicate the content to ensure a seamless loop */
-    width: fit-content; 
-    /* The animation duration determines the speed */
-    animation: scrolling 60s linear infinite; 
+    width: max-content; 
+    flex-direction: row;        /* Ensures it stays a row */
+    flex-wrap: nowrap;          /* Prevents images from wrapping to the next line */
+    animation: scrolling 30s linear infinite; 
 }
 
 /* Styling for individual images */
