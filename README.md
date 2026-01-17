@@ -1,2 +1,2 @@
-# ConfectioneryTerry
+# SweetsbyTerry
 Website Project
