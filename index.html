@@ -84,7 +84,7 @@
       img.onclick = function(){
           modal.style.display = "block";
           modalImg.src = this.src;
-          // Optional: Pause the scrolling when modal is open
+          // Pause scrolling when modal is open
           marqueeContent.style.animationPlayState = "paused"; 
       }
   });
@@ -92,14 +92,16 @@
   // Close the modal when clicking the 'x'
   closeBtn.onclick = function() {
       modal.style.display = "none";
-      marqueeContent.style.animationPlayState = "running"; // Resume scrolling
+      // CLEAR the inline style so the CSS hover effect works again
+      marqueeContent.style.animationPlayState = ""; 
   }
 
   // Close the modal when clicking outside the image
   window.onclick = function(event) {
       if (event.target == modal) {
           modal.style.display = "none";
-          marqueeContent.style.animationPlayState = "running"; // Resume scrolling
+          // CLEAR the inline style so the CSS hover effect works again
+          marqueeContent.style.animationPlayState = ""; 
       }
   }
 </script>
