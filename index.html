@@ -65,6 +65,45 @@
 <img src="cake/23.jpg" alt="Beautiful Cake 23">
     </div>
 </div>
+
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+</div>
+
+<script>
+  // Get the modal elements
+  var modal = document.getElementById("imageModal");
+  var modalImg = document.getElementById("img01");
+  var closeBtn = document.getElementsByClassName("close")[0];
+  var marqueeContent = document.querySelector(".marquee-content");
+
+  // Get all images in the marquee and add click listeners
+  var images = document.querySelectorAll(".marquee-content img");
+  images.forEach(function(img) {
+      img.onclick = function(){
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          // Optional: Pause the scrolling when modal is open
+          marqueeContent.style.animationPlayState = "paused"; 
+      }
+  });
+
+  // Close the modal when clicking the 'x'
+  closeBtn.onclick = function() {
+      modal.style.display = "none";
+      marqueeContent.style.animationPlayState = "running"; // Resume scrolling
+  }
+
+  // Close the modal when clicking outside the image
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+          marqueeContent.style.animationPlayState = "running"; // Resume scrolling
+      }
+  }
+</script>
+
     <p>This is practice.</p>
 </body>
 </html>
