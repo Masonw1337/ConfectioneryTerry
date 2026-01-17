@@ -1,6 +1,6 @@
 :root {
     --primary-color: #E87C45;
-    --text-color: #333333;
+    --text-color: #0F2854;
     --background-color: #FFFFFF;
     --card-bg: ##0BBBBB;
     --font-stack: 'Helvetica Neue', Arial, sans-serif;
@@ -51,7 +51,7 @@ a:hover, a:focus {
 nav {
     display: flex;
     justify-content: center;
-    background-color: var(--card-bg);
+    background-color: #0BBBBB;
     padding: 15px 0;
     margin-bottom: 40px;
     border-radius: 5px;
